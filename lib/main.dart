@@ -67,7 +67,13 @@ class _MyAppState extends State<MyApp> {
                 //javaScriptCanOpenWindowsAutomatically: true,
                 mediaPlaybackRequiresUserGesture: false,
               ),
-              android: AndroidInAppWebViewOptions(supportMultipleWindows: true)),
+              android: AndroidInAppWebViewOptions(
+                    useHybridComposition: true
+                ),
+              ios: IOSInAppWebViewOptions(
+                  allowsInlineMediaPlayback: true,
+                ),
+            ),
             onWebViewCreated: (InAppWebViewController controller) {
               _webViewController = controller;
             },
